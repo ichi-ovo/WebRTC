@@ -35,7 +35,7 @@ function initialize(){
     var secure = location.protocol === 'https:';
     var protocol = secure ? 'wss' : 'ws';
     var url = protocol + '://' + location.host + '/';
-    ws = new WebSoket(url);
+    ws = new WebSocket(url);
 
     // RTCPeerConnection初期化
     peer = new RTCPeerConnection({
