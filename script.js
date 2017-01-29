@@ -40,8 +40,8 @@ function initialize(){
     // RTCPeerConnection初期化
     peer = new RTCPeerConnection({
         iceServers: [
-            {url: 'stun:stun.l.google.com:19302'}   // STUNサーバの指定
-            //{url: 'stun:23.21.150.121'}             // TURNサーバの指定
+            {url: 'stun:stun.l.google.com:19302'}   
+            //{url: 'stun:23.21.150.121'}             
         ]
     });
 
