@@ -26,16 +26,13 @@ window.RTCIceCandidate =
 
 
 
-
-
 var ws = null;      // WebSocketオブジェクト
 var peer = null;    // RTCPeerConnection（ストリーミングを扱う）オブジェクト
 
 // 初期化関数
 function initialize(){
-
     // WebSocketの接続開始
-    var secure = location.protpcol === 'https:';
+    var secure = location.protocol === 'https:';
     var protocol = secure ? 'wss' : 'ws';
     var url = protocol + '://' + location.host + '/';
     ws = new WebSoket(url);
