@@ -70,7 +70,7 @@ function initialize(){
         peer.setRemoteDescription(description, function(){  // RTCSessionDescriptionをPeerConnectionへ登録
             // SDPがofferならばanswerを実行
             if(description.type === 'offer'){
-                anser();
+                answer();
             }
         });
     });
@@ -78,7 +78,7 @@ function initialize(){
     // WebSocketのメッセージ受信時の処理の指定（経路情報）
     ws.addEventListener('message', function(evt){
         var data = JSON.parse(evt.data);
-        if(!data.candidate){ reyurn; }                          // 経路情報が含まれているか判定、なかったら返す
+        if(!data.candidate){ return; }                          // 経路情報が含まれているか判定、なかったら返す
         var candidate = new RTCIceCandidate(data.candidate);    // RTCIceCandidate（経路情報を扱う）の生成
         peer.addIceCandidate(candidate);                        // RTCIceCandidateをPeerConnectionへ登録
     });
