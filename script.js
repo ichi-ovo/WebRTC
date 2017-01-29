@@ -32,7 +32,9 @@ var peer = null;    // RTCPeerConnection（ストリーミングを扱う）オ�
 // 初期化関数
 function initialize(){
     // WebSocketの接続開始
-    var url = 'ws://localhost:3001';
+    var secure = location.protocol === 'https:';
+    var protocol = secure ? 'wss' : 'ws';
+    var url = protocol + '://' + location.host + '/';
     ws = new WebSocket(url);
 
     // RTCPeerConnection初期化
