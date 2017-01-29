@@ -35,6 +35,7 @@ function initialize(){
     var secure = location.protocol === 'https:';
     var protocol = secure ? 'wss' : 'ws';
     var url = protocol + '://' + location.host + '/';
+    document.write(url)
     ws = new WebSocket(url);
 
     // RTCPeerConnection初期化
