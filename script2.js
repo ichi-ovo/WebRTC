@@ -36,7 +36,7 @@ function initialize(){
     //var secure = location.protocol === 'https:';
     //var protocol = secure ? 'wss' : 'ws';
     //var url = protocol + '://' + location.host + '/';
-    var url = 'ws://133.42.147.177:3001/';
+    var url = 'ws://133.42.147.186:3001/';
     ws = new WebSocket(url);
 
     // RTCPeerConnection初期化
